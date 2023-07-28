@@ -1,0 +1,496 @@
+<app-header></app-header>
+<main id="main" class="main">
+    <div class="pagetitle row-md-3">
+        <h5>Create New Receipt</h5>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+             <!-- off cansvas toggle design start -->
+
+<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+
+    <div class="offcanvas-body">  
+      <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+             <!-- <h5 class="register-heading">Policy Details</h5> -->
+             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         
+              <div class="row register-form">
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label class="form-label">Type Of Receipt*</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <select class="form-select" aria-label="Channel">
+                                      <option selected>Select</option>
+                                      <option value="1">New Business</option>
+                                      <option value="2">Renewal</option>
+                                      <option value="2">Reinstatement</option>
+                                      
+                                    </select>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label class="form-label">Name Of The Propeser*</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="" value="" />
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label class="form-label">Dm Code*</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="" value="" />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label class="form-label">Product Name*</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <select class="form-select" aria-label="Product Name">
+                                      <option selected>Select</option>
+                                      <option value="1">e-Wealth Royale</option>
+                                      <option value="2">Elite Assure Plus</option>
+                                      <option value="2">Century Plus</option>
+                                      <option value="2">Wealth Creator</option>
+                                      
+                                    </select>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label class="form-label">Application No/Policy No*</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="" value="" />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label class="form-label">Agent Code*</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="" value="" />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label class="form-label">Dm Name*</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="" value="" />
+                              </div>
+                          </div>
+  
+                      </div>
+                      <div class="form-group">
+                          <div class="row">
+                               <div class="col-md-6">
+                                   <label class="form-label">Premium Type*</label>
+                               </div>
+                               <div class="col-md-6">
+                                  <select class="form-select" aria-label="Premium type">
+                                      <option selected>Select</option>
+                                      <option value="1">Single</option>
+                                      <option value="2">Regular</option>
+                                      
+                                    </select>
+                               </div>
+                           </div>
+                       </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                         <div class="row">
+                              <div class="col-md-6">
+                                  <label class="form-label">Confirm Application/Policy No*</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <input type="text" class="form-control" placeholder="" value="" />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="row">
+                               <div class="col-md-6">
+                                   <label class="form-label">Agent Name*</label>
+                               </div>
+                               <div class="col-md-6">
+                                   <input type="text" class="form-control" placeholder="" value="" />
+                               </div>
+                           </div>
+                       </div>
+                       <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <input type="submit" class="btnRegister"  value="Submit"/>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>                
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- off canvas close -->
+                <div class="card">
+                    <div class="card-body mt-2">
+                        <form>
+                            <div class="row" style="margin-top: 12px; margin-bottom: -5px">
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Receipt Type*</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-select" aria-label="Individual">
+                                                <option selected>Individual</option>
+                                                <option value="1">New Business</option>
+                                                <option value="2">Renewal</option>
+                                                <option value="3">Reinstatement</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Channel</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-select" aria-label="Channel">
+                                                <option selected>Select</option>
+                                                <option value="1">Banca</option>
+                                                <option value="2">Agency</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-2">
+                                    
+                                    <button class="btn btn-primary position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                                        Policy <i class="bi bi-info-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Payment Details</h5>
+
+                        <!-- General Form Elements -->
+                        <form>
+                            <div class="row register-form">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Payment Mode*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select class="form-select" aria-label="Premium type">
+                                                    <option selected>Select</option>
+                                                    <option value="1">NEFT</option>
+                                                    <option value="2">Cheque</option>
+                                                    <option value="2">Cash</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">PAN Exempted*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="toggle">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                  </label>    
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Cheque Type*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select class="form-select" aria-label="Premium type">
+                                                    <option selected>Select</option>
+                                                    <option value="1">Local</option>
+                                                    <option value="2">Outstation</option>
+                                                    <option value="2">Same Bank</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Micr Code*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Instrument No*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Instrument Amount*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">PAN card No*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="AAAAA1234D"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Bank Name*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">IFSC Code*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Instrument Date*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Due Amount*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">A/c No*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Payable At*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Collection Date*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Acknowledge No*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Other Customer Details</h5>
+
+                        <!-- General Form Elements -->
+                        <form>
+                            <div class="row register-form">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Email*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Phone No*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">DOB*</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Remark/Narration*</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" rows="3"
+                                                    placeholder="Provide Narration ..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label class="form-label">Address*</label>
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            <textarea class="form-control" rows="3"
+                                                                placeholder="Customer Address ..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <!-- close customer details -->
+
+
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12" style="text-align: center; margin-top:10px;">
+                                        <button type="button" class="btn btn-primary"><i class="bi bi-save me-1"></i>
+                                            Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- button close -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>

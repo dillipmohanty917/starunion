@@ -1,0 +1,17 @@
+body {
+    overflow: auto !important;
+}
+
+main {
+    margin: 5% 0.3% 5% 0.3%;
+}
+
+
+
+@media only screen and (min-width: 300px) and (max-width: 1167px) {
+    main {
+        margin-top: 16%;
+    }
+}
+
+

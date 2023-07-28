@@ -1,0 +1,137 @@
+
+<div class="container-fluid  col-xs-3">
+    <nav *ngIf="showHeader" class="navbar fixed-top" >
+        <div class="navbar-logo">
+            <a href="#">
+                <img src="assets/images/logo.png" alt="Logo">
+            </a>
+          
+   <!-- sidebar open -->   
+   <div class="toggle" style="margin-left:20px">
+   <button class="navbar-toggler" type="button" data-bs-toggle="dropdown" data-bs-target="#main_nav"
+   aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+       <div class="dropdown-menu megamenu " role="menu" id="main_nav" col-md-6 col-xs-3>
+           <div class="row g-3">
+               <div class="col-lg-3 col-6">
+                   <div class="col-megamenu">
+                       <h6 class="title">Policy Servicing</h6><hr>
+                       <ul class="hr list-unstyled">
+                           <li><a href=""><i class="bi-side bi-airplane"></i> Proposal Tracker</a></li><hr>
+                               <li><a href=""><i class="bi-side bi-file-earmark"></i> Policy Bond</a></li><hr>
+                               <li><a routerLink="/agency-receipting"><i class="bi bi-receipt"></i>
+                                   Agency Recepting</a></li><hr>
+                               <li><a href="#"><i class="bi-side bi-file-earmark-ruled"></i> e-Statement</a></li><hr>
+                               <li> <a href=""><i class="bi-side bi-currency-rupee"></i> Customer Ledger</a></li>
+                               <li> <a href=""><i class="bi-side bi-currency-rupee"></i> Policy Service</a></li>
+                       </ul>
+                   </div>  
+               </div>
+               <!-- end col-3 -->
+               <div class="col-lg-3 col-6">
+                   <div class="col-megamenu">
+                       <h6 class="title">
+                           Agency servicing</h6><hr>
+                       <ul class="list-unstyled">
+               
+                            <li><a href=""><i class="bi-side bi-currency-rupee"></i> ARF</a></li>
+                               <li><a href=""><i class="bi bi-receipt"></i> RRB Receipting</a></li><hr>
+                               </ul>
+                   </div> 
+               </div>
+               <!-- end col-3 -->
+               <div class="col-lg-3 col-6">
+                   <div class="col-megamenu">
+                       <h6 class="title">Management</h6><hr>
+                       <ul class="list-unstyled">
+                           <li><a href=""><i class="bi-side bi-airplane"></i> Approve Cash Receipting</a></li><hr>
+                           <li><a href=""><i class="bi-side bi-file-earmark"></i> Management Report</a></li><hr>
+                       </ul>
+                   </div>  
+               </div>    
+               <div class="col-lg-3 col-6">
+                   <div class="col-megamenu">
+                       <h6 class="title">Other Links-</h6><hr>
+                       <ul class="list-unstyled">
+                           <li><a href=""><i class="bi-side bi-file-earmark"></i> CRM</a></li><hr>
+                   
+                       </ul>
+                   </div>  
+               </div>
+           </div> 
+       </div> 
+    </div>
+</div>
+ 
+<!-- sidebar close -->
+<!-- search icon -->
+<form >
+        <!-- <div class="navbar-middle"  col-xs-3>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search..." style="font-size:18px; padding-left: 8px; word-wrap: break-word;">
+                <i class="fa fa-search search-icon " style="font-size: 20px;"></i>
+            </div>
+           
+        </div> -->
+        <div class="sidenavbar-search">
+            <input type="text" [(ngModel)]="searchTerm" [ngModelOptions]="{ standalone: true }" placeholder="Search users..." (input)="onSearchInput()">
+            <i class="fa fa-search navsearch-icon" (click)="searchUsers()"></i>
+          </div>
+          <table class="table" *ngIf="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+              
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of filteredUsers">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.id }}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+
+    </form>       
+<!-- search icon close-->
+
+<!-- login user -->
+        <div class="navbar-right"   col-xs-3 (click)="toggleMenu()">
+            <div class="navbar-admin"  #navbarAdmin>
+                <img src="assets/images/profile-img.jpg" alt="Admin Image">
+                <span class="cg" >{{username}}</span>
+                <i class="fas fa-caret-down" style="color:red"></i>
+             
+                <div class="logout-menu" *ngIf="showMenu">
+                    <ul class="dropdown-menu  dropdown-menu-end dropdown-menu-arrow profile show" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(-16px, 38.4px, 0px)">
+                          <li>
+                              <hr class="dropdown-divider"  style="color:blue">
+                            </li>
+                
+                            <li>
+                              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person" style="color:red"></i> 
+                                  <span> My Profile</span>
+                                  
+                              </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" style="color:blue">
+                              </li>
+                        <a class="dropdown-item d-flex align-items-center" (click)="logsout()" >
+                            <i class="bi bi-box-arrow-right" style="color:red"></i><span>Logout</span>
+                            <hr class="dropdown-divider">
+
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- login user close -->
+    </nav>
+</div>

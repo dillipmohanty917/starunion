@@ -1,0 +1,702 @@
+<app-header2></app-header2>
+<main id="main" class="main">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="receiptForm" (ngSubmit)="Greceipt()">
+                <div class="row" style="margin-top: 12px; margin-bottom: -5px">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label">Receipt Type*</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select" aria-label="Individual" formControlName="receiptType">
+                                    <option *ngFor="let type of receiptTypes" [value]="type.value">{{ type.label }}
+                                    </option>
+                                    <!-- <option selected>Individual</option>
+                                    <option value="1">New Business</option>
+                                    <option value="2">Renewal</option>
+                                    <option value="3">Reinstatement</option> -->
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label">Channel</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select" aria-label="Channel" formControlName="channel">
+                                    <option *ngFor="let channel of channels" [value]="channel.value">{{ channel.label }}
+                                    </option>
+                                    <!-- <option selected>Select</option>
+                                    <option value="1">Banca</option>
+                                    <option value="2">Agency</option> -->
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2">
+
+                        <button class="btn btn-primary position-relative">
+                            Generate
+                        </button>
+                    </div>
+                </div>
+                <!-- <div *ngIf="receiptForm.valid">
+                    <p>Selected receipt type: {{ receiptForm.value.receiptType }}</p>
+                    <p>Selected channel: {{ receiptForm.value.channel }}</p>
+                  </div> -->
+            </form>
+
+
+            <div class="accordion" id="accordionPanelsStayOpenExample" style="margin-top: 25px">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseOne">
+                            Policy Details
+                        </button>
+                    </h2>
+
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+
+                            <!--  -->
+                            <form  [formGroup]="policydetails" (ngSubmit)="Policydetails()">
+                                <div class="row register-form">
+                                    <!-- <form> -->
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Type Of Receipt*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select" aria-label="Receipt"  formControlName="typereceipt">
+                                                        <option *ngFor="let receipt of type_reciepts" [value]="receipt.value">{{ receipt.label }}
+                                                        <!-- <option selected>Select</option>
+                                                        <option value="1">New Business</option>
+                                                        <option value="2">Renewal</option>
+                                                        <option value="2">Reinstatement</option> -->
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Name Of The Propeser*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="nameOfProposer"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Dm Code*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="dmCode" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Product Name*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select" aria-label="Product Name" formControlName="productName">
+                                                        <option *ngFor="let product of Product_names" [value]="product .value">{{ product .label }}
+                                                        <!-- <option selected>Select</option>
+                                                        <option value="1">e-Wealth Royale</option>
+                                                        <option value="2">Elite Assure Plus</option>
+                                                        <option value="2">Century Plus</option>
+                                                        <option value="2">Wealth Creator</option> -->
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Application No/Policy No*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="applicationNoPolicyNo"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Agent Code*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="agentCode"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Dm Name*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="dmName"/>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Premium Type*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select" aria-label="Premium type" formControlName="premiumType" >
+                                                    <option *ngFor="let premium of premium_types" [value]="premium.value">{{ premium.label }}</option>
+                                                        <!-- <option selected>Select</option>
+                                                        <option value="1">Single</option>
+                                                        <option value="2">Regular</option> -->
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Confirm Application/Policy No*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="confirmApplicationPolicyNo"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Agent Name*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="agentName"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <input type="submit" class="btnRegister" value="Submit" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!--  -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="accordion-item">
+                    <form  [formGroup]="paymentdetails" (ngSubmit)="Paymentdetails()">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseTwo">
+                            Payment Details
+                        </button>
+                    </h2>
+                   
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+
+                            
+                                <div class="row register-form">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Payment Mode*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select" aria-label="payment mode" formControlName="paymentMode">
+                                                    <option *ngFor="let payment of payment_modes" [value]="payment.value">{{ payment.label }}</option>
+                                                        <!-- <option selected>Select</option>
+                                                        <option value="1">NEFT</option>
+                                                        <option value="2">Cheque</option>
+                                                        <option value="2">Cash</option> -->
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">PAN Exempted*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="toggle">
+                                                        <input type="checkbox" formControlName="" formControlName="panExmpted">
+                                                        <span class="slider"></span>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Cheque Type*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select" aria-label="Cheque Type" formControlName="chequeType">
+                                                        <option selected>Select</option>
+                                                        <option value="1">Local</option>
+                                                        <option value="2">Outstation</option>
+                                                        <option value="2">Same Bank</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Micr Code*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="ex-560229057 "
+                                                        value="" formControlName="micrCode"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Instrument No*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="instrumentNo"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Instrument Amount*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="instrumentAmount"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">PAN card No*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="AAAAA1234D"
+                                                        value="" formControlName="panCard" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Bank Name*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="bankName" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">IFSC Code*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="ex-SBIN0005943"
+                                                        value="" formControlName="bankName"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Instrument Date*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="date" class="form-control" formControlName="ifscCode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Due Amount*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="dueAmount" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">A/c No*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="acNo"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Payable At*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="payableAt"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Collection Date*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="date-time" class="form-control" step="60"
+                                                        id="datetime" formControlName="collectionDate">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Acknowledge No*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="acknowledge"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                           
+                            <!--  -->
+                        </div>
+                    </div>
+                <!-- </form>
+                </div> -->
+       
+                <!--  -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingfour">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapsefour">
+                            More Customer Details
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapsefour" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingfour">
+                        <div class="accordion-body">
+                            
+                       
+                                <div class="row register-form">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Name</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Phone No*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">DOB*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row register-form">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Gender</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select" aria-label="Gender">
+
+                                                        <option selected>Select</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Female</option>
+                                                        <option value="3">Others</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Maritial Status*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select" aria-label="Gender">
+
+                                                        <option selected>Select</option>
+                                                        <option value="1">Single</option>
+                                                        <option value="2">Married</option>
+                                                        <option value="3">Widowed</option>
+                                                        <option value="4">Divorced</option>
+
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Smoker</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="toggle">
+                                                        <input type="checkbox">
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Permanent Address*</label>
+                                                </div>
+                                                <div class="col-md-10">
+
+                                                    <fieldset>
+
+
+                                                        <input type="text" class="form-control" value=""
+                                                            placeholder="permanent address....."><br>
+
+                                                        <input type="text" class="form-control" value=""
+                                                            placeholder="........"><br>
+                                                        <input type="text" class="form-control" value=""
+                                                            placeholder="........"><br>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <label class="form-label">Communication Address*</label>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <!-- <textarea class="form-control" rows="3"
+                                                                    placeholder="Current Address ..."></textarea> -->
+
+                                                                <fieldset>
+                                                                    <input type="text" class="form-control" value=""
+                                                                        placeholder="current address........"><br>
+
+                                                                    <input type="text" class="form-control" value=""
+                                                                        placeholder="........"><br>
+                                                                    <input type="text" class="form-control"
+                                                                        value="........" placeholder="........"><br>
+                                                                </fieldset>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                  <!-- close more customer details -->
+
+                   <!-- start other customer details-->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseThree">
+                            Other Customer Details
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                                <div class="row register-form">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Email*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Phone No*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">DOB*</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Remark/Narration*</label>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" rows="3"
+                                                        placeholder="Provide Narration ..."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <label class="form-label">Address*</label>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <textarea class="form-control" rows="3"
+                                                                    placeholder="Customer Address ..."></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- other q customer details -->
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12" style="text-align: center; margin-top:10px;">
+                                            <button type="button" class="btn btn-primary"><i
+                                                    class="bi bi-save me-1"></i>
+                                                Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                          
+                                <!-- button close -->
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+            </div>
+            <!-- </form> -->
+        </div>
+    </div>
+</main>

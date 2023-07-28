@@ -1,0 +1,112 @@
+<div class="container-fluid">
+    <nav *ngIf="showHeader" class="navbar fixed-top" >
+        <div class="navbar-logo">
+            <a href="#">
+                <img src="assets/images/logo.png" alt="Logo">
+            </a>
+            <a class="toggle-sidebar-icon" data-bs-toggle="offcanvas" aria-controls="offcanvasExample"
+                href="#offcanvasExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <!-- sidebar open -->
+        <aside>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <!-- <div class="offcanvas-header">
+                    <img src="assets/images/logo.png" alt="Logo">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div> -->
+            <!-- <div class="sidenavbar-search">
+                <input type="text" placeholder="Search...">
+                <i class="fa fa-search navsearch-icon" style="font-size: 20px;"></i>
+            </div> -->
+           
+            <div class="offcanvas-body">
+                <div class="accordion" id="application">
+                    <div class="card mt-1">
+        
+
+                            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" (click)="isCollapsed=!isCollapsed"
+                                data-bs-target="#collapseOne">
+                                Dashboard</button>
+
+                       
+                        <div *ngIf="isCollapsed">
+                            <div class="card-body">
+                                <ul>
+                                    <li><a href=""><i class="bi-side bi-airplane"></i> Proposal Tracker</a></li>
+                                    <li><a href=""><i class="bi-side bi-file-earmark"></i> Policy Bond</a></li>
+                                    <li><a href="#"><i class="bi-side bi-file-earmark-person"></i> Customer Ledger</a>
+                                    </li>
+                                    <li><a href="#"><i class="bi-side bi-file-earmark-ruled"></i> e-Statement</a></li>
+                                    <li><a routerLink="/agency-receipting"><i class="bi-side bi-currency-rupee"></i>
+                                            Agency Recepting</a></li>
+                                    <li><a href=""><i class="bi-side bi-currency-rupee"></i>ARF</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+        
+        <!-- sidebar close -->
+
+        <div class="navbar-middle">
+            <div class="navbar-search">
+                <input type="text" placeholder="Search..." style="font-size:18px; padding-left: 8px;">
+                <i class="fa fa-search search-icon" style="font-size: 20px;"></i>
+            </div>
+        </div>
+
+       
+        <div class="navbar-right" (click)="toggleMenu()" >
+            <div class="navbar-admin"  #navbarAdmin>
+                <img src="assets/images/profile-img.jpg" alt="Admin Image">
+                <span class="cg">K.Anderson</span>
+                <i class="fas fa-caret-down" style="color:red"></i>
+             
+                <div class="logout-menu" *ngIf="showMenu">
+                    <ul class="dropdown-menu  dropdown-menu-end dropdown-menu-arrow profile show" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(-16px, 38.4px, 0px)">
+                          <li>
+                              <hr class="dropdown-divider"  style="color:blue">
+                            </li>
+                
+                            <li>
+                              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person" style="color:red"></i> 
+                                  <span> My Profile</span>
+                                  
+                              </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" style="color:blue">
+                              </li>
+                        <a class="dropdown-item d-flex align-items-center" routerLink="/login">
+                            <i class="bi bi-box-arrow-right" style="color:red"></i>  <span>Logout</span>
+                            <hr class="dropdown-divider">
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
+
+
+
+
+<!-- Footer -->
+<!-- <footer id="sticky-footer" class="flex-shrink-0 py-4  text-white-50 mt-2">
+    <div class="container text-center">
+        <small>Copyright &copy; Your Website</small>
+    </div>
+</footer>  -->

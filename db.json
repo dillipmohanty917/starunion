@@ -1,0 +1,23 @@
+{
+
+      "users": [
+        {
+          "id": 1,
+          "name": "Rohan roy",
+          "email": "test@test.com",
+          "password": "test123"
+        },
+        {
+          "id": 2,
+          "name": "sachin jha",
+          "email": "sachin@test.com",
+          "password": "test123"
+        },
+        {
+          "id": 3,
+          "name": "raju mishra",
+          "email": "raju@test.com",
+          "password": "test123"
+        }
+      ]
+}
